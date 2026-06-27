@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estetika | Institut de Beauté — Porto-Vecchio</title>
+<meta name="description" content="Estetika, institut de beauté à Porto-Vecchio. Épilations, soins visage, vernis semi-permanent, soins corps. Prenez rendez-vous en ligne.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--vert:#6a8c6a;--vert-light:#eef4ee;--vert-pale:#f6faf6;--dark:#0f1a0f;--dark2:#1a2d1a;--text:#0f1a0f;--text-sec:#3d5a3d;--text-muted:#7a9a7a;--border:rgba(64,90,64,.12);--radius:8px}
+body{font-family:'Inter',sans-serif;background:var(--vert-pale);color:var(--text)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:rgba(246,250,246,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);text-decoration:none;letter-spacing:1px}
+.nav-logo span{color:var(--vert)}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--vert);color:#fff;border:none;padding:9px 20px;cursor:pointer;transition:background .2s;font-family:'Inter',sans-serif}
+.nav-cta:hover{background:#5a7c5a}
+
+.hero{background:var(--dark2);color:#fff;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero-content{position:relative;z-index:1;max-width:580px;animation:fadeUp .8s ease both}
+.hero-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(106,140,106,.8);margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:64px;font-weight:400;line-height:1;margin-bottom:1rem}
+.hero h1 em{color:var(--vert);font-style:italic;display:block}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.8;max-width:420px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-vert{background:var(--vert);color:#fff;border:none;padding:13px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.btn-vert:hover{background:#5a7c5a}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:13px 28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif}
+.hero-details{display:flex;gap:20px;margin-top:3rem;flex-wrap:wrap}
+.hero-detail{font-size:12px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:6px}
+.hero-dot{width:4px;height:4px;background:var(--vert);border-radius:50%}
+
+.ticker{background:var(--vert);padding:11px 0;overflow:hidden}
+.ticker-inner{display:inline-flex;animation:marquee 22s linear infinite}
+.ticker-item{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;padding:0 36px;opacity:.9}
+
+.section{padding:5rem 2rem}
+.sec-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--vert);margin-bottom:.8rem;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-h{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:1rem}
+.sec-h em{color:var(--vert);font-style:italic}
+
+.soins-bg{background:#fff}
+.soins-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--border);margin-top:3rem}
+.soin-card{background:#fff;padding:2rem 1.5rem;transition:background .2s}
+.soin-card:hover{background:var(--vert-light)}
+.soin-dot{width:8px;height:8px;background:var(--vert);border-radius:50%;margin-bottom:1rem}
+.soin-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--text);margin-bottom:.4rem}
+.soin-desc{font-size:13px;color:var(--text-muted);line-height:1.7}
+.soin-badge{display:inline-block;margin-top:.8rem;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--vert);color:var(--vert);padding:3px 10px}
+
+.tarifs-section{background:var(--vert-pale)}
+.tarifs-grid{display:flex;flex-direction:column;gap:0;margin-top:2rem;border-top:1px solid var(--border)}
+.tarif-item{display:flex;justify-content:space-between;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--border);gap:2rem;transition:padding-left .2s}
+.tarif-item:hover{padding-left:8px}
+.tarif-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--text)}
+.tarif-desc{font-size:12px;color:var(--text-muted);margin-top:2px}
+.tarif-price{font-family:'Playfair Display',serif;font-size:17px;color:var(--vert);white-space:nowrap;flex-shrink:0}
+
+.horaires-strip{background:var(--dark);display:grid;grid-template-columns:repeat(3,1fr)}
+.hor-item{padding:2rem 1.5rem;border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.hor-item:last-child{border-right:none}
+.hor-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem}
+.hor-val{font-family:'Playfair Display',serif;font-size:20px;color:#fff}
+.hor-sub{font-size:12px;color:rgba(255,255,255,.35);margin-top:3px}
+
+.rdv-section{background:var(--dark2);padding:5rem 2rem}
+.rdv-inner{max-width:560px;margin:0 auto}
+.rdv-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(106,140,106,.7);margin-bottom:.8rem}
+.rdv-h{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:#fff;margin-bottom:.5rem}
+.rdv-sub{font-size:14px;color:rgba(255,255,255,.35);margin-bottom:2.5rem}
+.rdv-form{display:flex;flex-direction:column;gap:0}
+.rdv-group{border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 0}
+.rdv-group:first-child{border-top:1px solid rgba(255,255,255,.08)}
+.rdv-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:.3rem}
+.rdv-inp{background:transparent;border:none;color:#fff;font-size:16px;font-family:'Playfair Display',serif;width:100%;outline:none}
+.rdv-inp::placeholder{color:rgba(255,255,255,.15)}
+.rdv-sel{background:transparent;border:none;color:rgba(255,255,255,.7);font-size:16px;font-family:'Playfair Display',serif;width:100%;outline:none;appearance:none;cursor:pointer}
+.rdv-sel option{background:#1a2d1a;color:#fff}
+.rdv-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.rdv-row .rdv-group:first-child{border-right:1px solid rgba(255,255,255,.08);padding-right:1.5rem}
+.rdv-row .rdv-group:last-child{padding-left:1.5rem}
+.rdv-submit{margin-top:2rem;width:100%;background:var(--vert);color:#fff;border:none;padding:15px;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.rdv-submit:hover{background:#5a7c5a}
+.rdv-ok{display:none;margin-top:1rem;padding:1rem;border:1px solid rgba(106,140,106,.3);color:var(--vert);font-family:'Playfair Display',serif;font-style:italic;text-align:center;font-size:16px}
+
+.info-strip{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid var(--border)}
+.ii{padding:1.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.ii:last-child{border-right:none}
+.ii-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.ii-val{font-family:'Playfair Display',serif;font-size:17px;color:var(--text)}
+.ii-sub{font-size:12px;color:var(--text-muted)}
+
+footer{background:var(--dark);padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.5px}
+.footer-badge{font-size:10px;color:var(--vert);opacity:.5;letter-spacing:1px;text-transform:uppercase}
+
+@media(max-width:768px){
+  .hero h1{font-size:42px}
+  .horaires-strip{grid-template-columns:1fr}
+  .hor-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .info-strip{grid-template-columns:1fr}
+  .ii{border-right:none;border-bottom:1px solid var(--border)}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Este<span>tika</span></a>
+  <ul class="nav-links">
+    <li><a href="#soins">Soins</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#rdv">Prendre RDV</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('rdv').scrollIntoView({behavior:'smooth'})">Prendre RDV</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Institut de Beauté · Porto-Vecchio</div>
+    <h1>Este<em>tika</em></h1>
+    <p class="hero-sub">Votre institut de beauté au coeur de Porto-Vecchio. Épilations, soins visage et corps, vernis semi-permanent — des soins personnalisés pour révéler votre beauté naturelle.</p>
+    <div class="hero-btns">
+      <button class="btn-vert" onclick="document.getElementById('rdv').scrollIntoView({behavior:'smooth'})">Prendre rendez-vous</button>
+      <button class="btn-ghost" onclick="document.getElementById('soins').scrollIntoView({behavior:'smooth'})">Nos soins</button>
+    </div>
+    <div class="hero-details">
+      <span class="hero-detail"><span class="hero-dot"></span>Épilations</span>
+      <span class="hero-detail"><span class="hero-dot"></span>Soins visage</span>
+      <span class="hero-detail"><span class="hero-dot"></span>Vernis semi-permanent</span>
+      <span class="hero-detail"><span class="hero-dot"></span>Porto-Vecchio</span>
+    </div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Épilation · </span><span class="ticker-item">Soins visage · </span><span class="ticker-item">Vernis semi-permanent · </span><span class="ticker-item">Soins corps · </span><span class="ticker-item">Massage relaxant · </span><span class="ticker-item">Gommage · </span><span class="ticker-item">Porto-Vecchio · </span>
+    <span class="ticker-item">Épilation · </span><span class="ticker-item">Soins visage · </span><span class="ticker-item">Vernis semi-permanent · </span><span class="ticker-item">Soins corps · </span><span class="ticker-item">Massage relaxant · </span><span class="ticker-item">Gommage · </span><span class="ticker-item">Porto-Vecchio · </span>
+  </div>
+</div>
+
+<div class="section soins-bg" id="soins">
+  <div class="sec-label">Nos soins</div>
+  <h2 class="sec-h">Prenez soin de <em>vous</em></h2>
+  <div class="soins-grid">
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Épilations</div><div class="soin-desc">Jambes, aisselles, maillot, visage — à la cire ou à la lumière pulsée pour des résultats durables.</div><span class="soin-badge">Corps</span></div>
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Soins visage</div><div class="soin-desc">Nettoyage de peau, soin hydratant, anti-âge — adaptés à votre type de peau.</div><span class="soin-badge">Visage</span></div>
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Vernis semi-permanent</div><div class="soin-desc">Pose de vernis semi-permanent mains et pieds — tenue garantie plusieurs semaines.</div><span class="soin-badge">Onglerie</span></div>
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Soins corps</div><div class="soin-desc">Gommage, enveloppement, hydratation — des soins corps pour une peau douce et lumineuse.</div><span class="soin-badge">Corps</span></div>
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Massage relaxant</div><div class="soin-desc">Massage du corps aux huiles essentielles — relaxation profonde et bien-être total.</div><span class="soin-badge">Bien-être</span></div>
+    <div class="soin-card"><div class="soin-dot"></div><div class="soin-name">Teinture cils & sourcils</div><div class="soin-desc">Teinture et mise en forme des sourcils et cils pour un regard expressif et défini.</div><span class="soin-badge">Regard</span></div>
+  </div>
+</div>
+
+<div class="section" id="tarifs">
+  <div class="sec-label">Tarifs</div>
+  <h2 class="sec-h">Des soins <em>accessibles</em></h2>
+  <div class="tarifs-grid">
+    <div class="tarif-item"><div><div class="tarif-name">Épilation demi-jambes</div><div class="tarif-desc">Cire froide ou chaude selon la zone</div></div><div class="tarif-price">Sur devis</div></div>
+    <div class="tarif-item"><div><div class="tarif-name">Épilation jambes complètes</div></div><div class="tarif-price">Sur devis</div></div>
+    <div class="tarif-item"><div><div class="tarif-name">Épilation aisselles</div></div><div class="tarif-price">Sur devis</div></div>
+    <div class="tarif-item"><div><div class="tarif-name">Soin visage complet</div><div class="tarif-desc">Nettoyage + soin adapté</div></div><div class="tarif-price">Sur devis</div></div>
+    <div class="tarif-item"><div><div class="tarif-name">Vernis semi-permanent mains</div></div><div class="tarif-price">Sur devis</div></div>
+    <div class="tarif-item"><div><div class="tarif-name">Massage relaxant</div><div class="tarif-desc">45 min ou 1h</div></div><div class="tarif-price">Sur devis</div></div>
+  </div>
+</div>
+
+<div class="horaires-strip">
+  <div class="hor-item"><div class="hor-label">Du lundi au samedi</div><div class="hor-val">9h — 18h</div><div class="hor-sub">Sur rendez-vous</div></div>
+  <div class="hor-item"><div class="hor-label">Adresse</div><div class="hor-val">Porto-Vecchio</div><div class="hor-sub">Rue Pierre Andréani</div></div>
+  <div class="hor-item"><div class="hor-label">Contact</div><div class="hor-val">Sur RDV</div><div class="hor-sub">Formulaire ci-dessous</div></div>
+</div>
+
+<div class="info-strip">
+  <div class="ii"><div class="ii-label">Adresse</div><div class="ii-val">Rue Pierre Andréani</div><div class="ii-sub">20137 Porto-Vecchio</div></div>
+  <div class="ii"><div class="ii-label">Ouverture</div><div class="ii-val">Lun — Sam</div><div class="ii-sub">9h à 18h, sur rendez-vous</div></div>
+  <div class="ii"><div class="ii-label">Parking</div><div class="ii-val">Proche</div><div class="ii-sub">Centre de Porto-Vecchio</div></div>
+</div>
+
+<div class="rdv-section" id="rdv">
+  <div class="rdv-inner">
+    <div class="rdv-label">Prise de rendez-vous</div>
+    <h2 class="rdv-h">Réserver<br>votre soin</h2>
+    <p class="rdv-sub">Nous vous recontactons sous 24h pour confirmer votre rendez-vous.</p>
+    <form class="rdv-form" onsubmit="handleRdv(event)">
+      <div class="rdv-group"><label class="rdv-lbl">Prénom et nom</label><input class="rdv-inp" type="text" placeholder="Marie Dupont" required /></div>
+      <div class="rdv-group"><label class="rdv-lbl">Téléphone</label><input class="rdv-inp" type="tel" placeholder="06 12 34 56 78" required /></div>
+      <div class="rdv-row">
+        <div class="rdv-group"><label class="rdv-lbl">Soin souhaité</label><select class="rdv-sel"><option>Épilation</option><option>Soin visage</option><option>Vernis semi-permanent</option><option>Massage relaxant</option><option>Soin corps</option><option>Teinture cils/sourcils</option><option>Autre</option></select></div>
+        <div class="rdv-group"><label class="rdv-lbl">Date souhaitée</label><input class="rdv-inp" type="date" required /></div>
+      </div>
+      <div class="rdv-group"><label class="rdv-lbl">Message (facultatif)</label><input class="rdv-inp" type="text" placeholder="Précision, première visite..." /></div>
+      <button type="submit" class="rdv-submit">Envoyer ma demande</button>
+      <div id="rdv-ok" class="rdv-ok">Merci ! Nous vous contactons très prochainement pour confirmer.</div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 Estetika — Porto-Vecchio, Corse du Sud</span>
+  <span class="footer-badge">Démo de site web</span>
+</footer>
+
+<script>
+function handleRdv(e){e.preventDefault();document.getElementById('rdv-ok').style.display='block';e.target.querySelector('.rdv-submit').style.display='none';}
+</script>
+</body>
+</html>
